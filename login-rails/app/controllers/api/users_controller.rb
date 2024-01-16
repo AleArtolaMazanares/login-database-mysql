@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            render json: {status: :success, user:user}
+            render json: {status: :success, user:@user}
         else
             render json: {status: :unproccesable_entity}
         end

@@ -1,8 +1,9 @@
+import PageRoute from "./components/PageRoute";
 
 function App() {
   return (
     <div >
-      <h1>Hola</h1>
+      <PageRoute/>
     </div>
   );
 }
