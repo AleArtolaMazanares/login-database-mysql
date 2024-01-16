@@ -21,12 +21,16 @@ function Register() {
             },
             body: JSON.stringify({user})
         });
+       if (user.password === user.password_confirmation) {
         if (response.ok) {
             const userData = await response.json();
             console.log(userData)
         }else{
             alert("algo succedio")
         }
+       }else{
+        alert("las contraseñas no son iguales")
+       }
     }
  
   return (

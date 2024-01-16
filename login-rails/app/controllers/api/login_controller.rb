@@ -5,7 +5,7 @@ class Api::LoginController < ApplicationController
         render json: @users
     end
     def create
-        user = User.find(email: params[:user][:email])
+        user = User.find_by(email: params[:user][:email])
         if user && user.valid_password?(params[:user][:password])
             sign_in user
             render json: {status: :success, user:user}
