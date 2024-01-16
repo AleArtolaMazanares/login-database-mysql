@@ -25,6 +25,7 @@ function Register() {
         if (response.ok) {
             const userData = await response.json();
             console.log(userData)
+            window.location.href = "/"
         }else{
             alert("algo succedio")
         }

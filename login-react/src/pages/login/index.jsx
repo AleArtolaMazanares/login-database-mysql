@@ -20,7 +20,13 @@ function Login() {
         });
         if (response.ok) {
             const userData = await response.json();
-            console.log(userData)
+           if (userData.user && userData.user.id !== undefined) {
+            let idCliente = userData.user.id
+            window.location.href = `/welcome/${idCliente}`
+           }else{
+            alert("Cuenta no registrada")
+           }
+
         }else{
             alert("algo sucedio")
         }
